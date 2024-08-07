@@ -5,28 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: zouddach <zouddach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/06 17:52:50 by marvin            #+#    #+#             */
-/*   Updated: 2024/08/07 00:36:49 by zouddach         ###   ########.fr       */
+/*   Created: 2024/08/07 02:27:57 by zouddach          #+#    #+#             */
+/*   Updated: 2024/08/07 03:09:29 by zouddach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* ************************************************************************** */
-/*                                                                            */
-/*               TESTS FOR CPP01: EX01, BY ZOUDDACH | 42 . 1337               */
-/*               TESTS FOR CPP01: EX01, BY ZOUDDACH | 42 . 1337               */
+# include "Harl.hpp"
 
-/* ************************************************************************** */
-
-# include "Zombie.hpp"
-
-int main( void ) {
-	// heap Allocation for a Zombie horde
-	Zombie* horde = zombieHorde(5, "STAFF");
-	if (horde == NULL) {
+int main( int ac, char **av ) {
+	if (ac != 2) {
+		std::cout << "Usage: ./HarlFilter [LeveL]" << std::endl;
 		return (1);
 	}
-
-	// Deleting the horde
-	delete [] horde;
+	Harl harl;
+	harl.complain(av[1]);
 	return (0);
 }
