@@ -1,5 +1,5 @@
-NAME=BSP
-SRC=Fixed.cpp main.cpp Point.cpp
+NAME=ClapTrap
+SRC=ClapTrap.cpp main.cpp
 OBJ=$(SRC:.cpp=.o)
 
 all: $(NAME)
@@ -7,7 +7,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	c++ -Wall -Wextra -Werror -std=c++98 $(OBJ) -o $(NAME)
 
-%.o: %.cpp Fixed.hpp Point.hpp
+%.o: %.cpp ClapTrap.hpp
 	c++ -Wall -Wextra -Werror -std=c++98 -c $< -o $@
 
 clean:
