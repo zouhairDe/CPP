@@ -6,7 +6,7 @@
 /*   By: zouddach <zouddach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 12:43:59 by zouddach          #+#    #+#             */
-/*   Updated: 2024/10/22 13:06:16 by zouddach         ###   ########.fr       */
+/*   Updated: 2024/10/22 14:30:35 by zouddach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 #include "Ice.hpp"
 #include "Cure.hpp"
 
-// void leaks_check()
-// {
-//     std::cout << "\nChecking for leaks...\n" << std::endl;
-//     system("leaks ex03");
-// }
+void leaks_check()
+{
+    std::cout << "\nChecking for leaks...\n" << std::endl;
+    system("leaks ex03");
+}
 
 int main()
 {
     //  Intra Tests....
-    // atexit(leaks_check);
+    atexit(leaks_check);
 
   IMateriaSource *src = new MateriaSource();
   src->learnMateria(new Ice());
