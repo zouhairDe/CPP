@@ -20,9 +20,9 @@ class Cat : public Animal {
     public:
         Cat();
         Cat(const Cat &c);
-        virtual ~Cat();
+        ~Cat();
         Cat &operator=(const Cat &c);
-        virtual void makeSound() const;
+        void makeSound() const;
 };
 
 

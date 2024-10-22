@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zouddach <zouddach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/12 01:44:48 by zouddach          #+#    #+#             */
-/*   Updated: 2024/10/21 19:45:12 by zouddach         ###   ########.fr       */
+/*   Created: 2024/09/12 02:11:56 by zouddach          #+#    #+#             */
+/*   Updated: 2024/10/21 19:34:23 by zouddach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
-# include <iostream>
+# include "Animal.hpp"
+# include "Brain.hpp"
 
-class Animal {
+class Dog : public Animal {
+    private:
+        Brain *brain;
     public:
-        Animal();
-        Animal(const Animal &a);
-        virtual ~Animal();
-        Animal &operator=(const Animal &a);
-        virtual void makeSound() const;
-        std::string getType() const;
-    protected:
-        std::string _type;
+        Dog();
+        Dog(const Dog &d);
+        ~Dog();
+        Dog &operator=(const Dog &d);
+        void makeSound() const;
+        void getBrainAdrr() const;
+        std::string *printIdeaAdressOf(int i) const;
+        std::string printIdeaNumber(int i) const;
 };
 
-
-
-
-# endif
+#endif
