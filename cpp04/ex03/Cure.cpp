@@ -6,11 +6,12 @@
 /*   By: zouddach <zouddach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 12:41:56 by zouddach          #+#    #+#             */
-/*   Updated: 2024/10/22 12:51:37 by zouddach         ###   ########.fr       */
+/*   Updated: 2024/11/23 23:05:49 by zouddach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
+#include "ICharacter.hpp"
 
 Cure::Cure() {
     _type = "cure";

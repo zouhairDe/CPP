@@ -6,7 +6,7 @@
 /*   By: zouddach <zouddach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:14:39 by zouddach          #+#    #+#             */
-/*   Updated: 2024/10/22 14:16:45 by zouddach         ###   ########.fr       */
+/*   Updated: 2024/11/23 23:28:05 by zouddach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ Character::Character(std::string name) : _name(name) {
     std::cout << "Character Parametric constructor called" << std::endl;
 }
 
-Character::Character(const Character &a) : _name(a._name + " but Copied") {
+Character::Character(const Character &a) {
+    if (this == &a)
+        return ;
+    static_cast<const std::string>(_name) + a._name + " but copy Constructed";
     for (int i = 0; i < 4; i++) {
         if (a._materias[i] != NULL)
             _materias[i] = a._materias[i]->clone();
@@ -41,6 +44,7 @@ Character::~Character() {
             delete _materias[i];
     }
     std::cout << "Character Destructor called" << std::endl;
+    std::cout << "Materias has been cleaned" << std::endl;
 }
 
 Character &Character::operator=(const Character &a) {

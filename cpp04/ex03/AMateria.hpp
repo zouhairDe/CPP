@@ -6,15 +6,14 @@
 /*   By: zouddach <zouddach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 19:55:01 by zouddach          #+#    #+#             */
-/*   Updated: 2024/10/22 12:13:10 by zouddach         ###   ########.fr       */
+/*   Updated: 2024/11/23 22:59:31 by zouddach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef AMATERIA_HPP
 #define AMATERIA_HPP
 
-# include "ICharacter.hpp"
-# include <iostream>
+# include <iostream> // IWYU pragma: keep
 
 class ICharacter;
 

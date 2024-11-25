@@ -6,7 +6,7 @@
 /*   By: zouddach <zouddach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 19:56:32 by zouddach          #+#    #+#             */
-/*   Updated: 2024/10/22 14:18:22 by zouddach         ###   ########.fr       */
+/*   Updated: 2024/11/23 22:58:48 by zouddach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define ICHARACTER_HPP
 
 # include "AMateria.hpp"
-# include <iostream>
+# include <iostream> // IWYU pragma: keep
 
 class AMateria;
 

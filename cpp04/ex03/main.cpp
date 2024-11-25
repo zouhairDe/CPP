@@ -6,7 +6,7 @@
 /*   By: zouddach <zouddach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 12:43:59 by zouddach          #+#    #+#             */
-/*   Updated: 2024/10/22 14:30:35 by zouddach         ###   ########.fr       */
+/*   Updated: 2024/11/23 23:54:38 by zouddach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int main()
   ICharacter *bob = new Character("bob");
   me->use(0, *bob);
   me->use(1, *bob);
+  me = bob;
   delete bob;
   delete me;
   delete src;

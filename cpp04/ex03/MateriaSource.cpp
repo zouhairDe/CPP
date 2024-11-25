@@ -6,13 +6,13 @@
 /*   By: zouddach <zouddach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:27:01 by zouddach          #+#    #+#             */
-/*   Updated: 2024/10/22 14:25:59 by zouddach         ###   ########.fr       */
+/*   Updated: 2024/11/23 23:29:28 by zouddach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "MateriaSource.hpp"
-# include "Ice.hpp"
-# include "Cure.hpp"
+# include "Ice.hpp"// IWYU pragma: keep
+# include "Cure.hpp"// IWYU pragma: keep
 #include <iostream>
 
 MateriaSource::MateriaSource() {
@@ -26,6 +26,10 @@ MateriaSource::MateriaSource(const MateriaSource &a) {
     if (this == &a)
         return ;
     for (int i = 0; i < 4; i++) {
+        if (_materias[i] != NULL)
+            delete _materias[i];
+    }
+    for (int i = 0; i < 4; i++) {
         if (a._materias[i] != NULL)
             _materias[i] = a._materias[i]->clone();
     }
@@ -38,6 +42,7 @@ MateriaSource::~MateriaSource() {
             delete _materias[i];
     }
     std::cout << "MateriaSource Destructor called" << std::endl;
+    std::cout << "Materias has been cleaned" << std::endl;
 }
 
 MateriaSource &MateriaSource::operator=(const MateriaSource &a) {
@@ -82,6 +87,6 @@ AMateria *MateriaSource::createMateria(std::string const &type) {
         }
         i++;
     }
-    std::cout << "MateriaSource: Materia not found" << std::endl;
+    std::cout << "MateriaSource: Materia not found/Unknown type" << std::endl;
     return NULL;
 }

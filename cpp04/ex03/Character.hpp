@@ -6,7 +6,7 @@
 /*   By: zouddach <zouddach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:49:19 by zouddach          #+#    #+#             */
-/*   Updated: 2024/10/22 14:17:12 by zouddach         ###   ########.fr       */
+/*   Updated: 2024/11/23 23:12:18 by zouddach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define CHARACTER_HPP
 
 # include "ICharacter.hpp"
-// # include <iostream>
 
 class Character : public ICharacter {
     private:

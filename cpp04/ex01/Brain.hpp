@@ -23,6 +23,7 @@ class Brain
         Brain(const Brain &b);
         Brain &operator=(const Brain &b);
         ~Brain();
+		std::string to_string(int num) const;
 };
 
 #endif

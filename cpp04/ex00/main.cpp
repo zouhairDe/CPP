@@ -6,7 +6,7 @@
 /*   By: zouddach <zouddach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 02:41:06 by zouddach          #+#    #+#             */
-/*   Updated: 2024/10/21 19:49:22 by zouddach         ###   ########.fr       */
+/*   Updated: 2024/11/23 22:26:33 by zouddach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,19 @@
 int main()
 {
     //  Intra Tests....
-    const Animal* meta = new Animal();
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    std::cout << j->getType() << std::endl;
-    std::cout << i->getType() << std::endl;
-    i->makeSound(); //will output the cat sound!
-    j->makeSound();
-    meta->makeSound();
+    // const Animal* meta = new Animal();
+    // const Animal* j = new Dog();
+    // const Animal* i = new Cat();
+    // std::cout << j->getType() << std::endl;
+    // std::cout << i->getType() << std::endl;
+    // i->makeSound(); //will output the cat sound!
+    // j->makeSound();
+    // meta->makeSound();
 
-    delete meta;
-    delete j;
-    delete i;
-    return 0;
+    // delete meta;
+    // delete j;
+    // delete i;
+    // return 0;
     //  My Tests....
     const Animal* dog = new Dog();
     const Animal* cat = new Cat();

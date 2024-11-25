@@ -6,7 +6,7 @@
 /*   By: zouddach <zouddach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 12:33:45 by zouddach          #+#    #+#             */
-/*   Updated: 2024/10/22 12:37:00 by zouddach         ###   ########.fr       */
+/*   Updated: 2024/11/23 23:07:31 by zouddach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ICE_HPP
 
 # include "AMateria.hpp"
+#include "ICharacter.hpp"
 
 class Ice : public AMateria {
     public:
