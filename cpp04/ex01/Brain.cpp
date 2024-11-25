@@ -6,12 +6,13 @@
 /*   By: zouddach <zouddach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 17:50:26 by zouddach          #+#    #+#             */
-/*   Updated: 2024/11/23 22:35:55 by zouddach         ###   ########.fr       */
+/*   Updated: 2024/11/23 22:45:17 by zouddach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
 # include <sstream>
+
 Brain::Brain()
 {
     ideas = new std::string[100];
@@ -29,33 +30,32 @@ std::string Brain::to_string(int num) const
 	return oss.str();
 }
 
-
 Brain::Brain(const Brain &b)
 {
     std::cout << "Brain copy constructor called" << std::endl;
-    if (this == &b)
-        return;
-    this->ideas = new std::string[100];
-    for (int i = 0; i < 100; i++)
+    if (this != &b)
     {
-        if (b.ideas[i].empty())
-            break;
-        ideas[i] = b.ideas[i] + " has been copied";
+        delete[] ideas;
+        this->ideas = new std::string[100];
+        for (int i = 0; i < 100; i++)
+        {
+            ideas[i] = b.ideas[i];
+        }
     }
-    return;
+    return ;
 }
 
 Brain &Brain::operator=(const Brain &b)
 {
     std::cout << "Brain assignation operator called" << std::endl;
-    if (this == &b)
-        return *this;
-    this->ideas = new std::string[100];
-    for (int i = 0; i < 100; i++)
+    if (this != &b)
     {
-        if (b.ideas[i].empty())
-            break;
-        ideas[i] = b.ideas[i] + " has been copied";
+        delete[] ideas;
+        this->ideas = new std::string[100];
+        for (int i = 0; i < 100; i++)
+        {
+            ideas[i] = b.ideas[i];
+        }
     }
     return *this;
 }

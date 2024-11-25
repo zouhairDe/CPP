@@ -30,7 +30,7 @@ int main()
 
     //  My Tests....
     std::cout << "\nAllocating Animals...\n" << std::endl;
-    Animal *(animals[10]);
+    Animal *animals[10];
     for (int i = 0; i < 10; i++)
     {
         if (i < 5)

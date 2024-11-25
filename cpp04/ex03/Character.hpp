@@ -18,7 +18,7 @@
 class Character : public ICharacter {
     private:
         std::string const _name;
-        AMateria *(_materias[4]);
+        AMateria *_materias[4];
     public:
         Character();
         Character(std::string name);

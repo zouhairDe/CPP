@@ -14,6 +14,7 @@
 #include "Character.hpp"
 #include "Ice.hpp"
 #include "Cure.hpp"
+#include <cstdlib>
 
 void leaks_check()
 {
@@ -23,9 +24,8 @@ void leaks_check()
 
 int main()
 {
-    //  Intra Tests....
-    atexit(leaks_check);
-
+  //  Intra Tests....
+  atexit(leaks_check);
   IMateriaSource *src = new MateriaSource();
   src->learnMateria(new Ice());
   src->learnMateria(new Cure());
@@ -38,7 +38,6 @@ int main()
   ICharacter *bob = new Character("bob");
   me->use(0, *bob);
   me->use(1, *bob);
-  me = bob;
   delete bob;
   delete me;
   delete src;

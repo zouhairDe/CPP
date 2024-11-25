@@ -17,7 +17,7 @@ Ice::Ice() {
     std::cout << "Ice Default constructor called" << std::endl;
 }
 
-Ice::Ice(const Ice &a) {
+Ice::Ice(const Ice &a) : AMateria(a) {
     _type = a.getType();
     std::cout << "Ice Copy constructor called" << std::endl;
 }

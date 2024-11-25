@@ -33,28 +33,29 @@ std::string Brain::to_string(int num) const
 Brain::Brain(const Brain &b)
 {
     std::cout << "Brain copy constructor called" << std::endl;
-    if (this == &b)
-        return;
-    for (int i = 0; i < 100; i++)
+    if (this != &b)
     {
-        if (b.ideas[i].empty())
-            break;
-        ideas[i] = b.ideas[i] + " has been copied";
+        delete[] ideas;
+        this->ideas = new std::string[100];
+        for (int i = 0; i < 100; i++)
+        {
+            ideas[i] = b.ideas[i];
+        }
     }
-    *this = b;
+    return ;
 }
 
 Brain &Brain::operator=(const Brain &b)
 {
     std::cout << "Brain assignation operator called" << std::endl;
-    if (this == &b)
-        return *this;
-    this->ideas = new std::string[100];
-    for (int i = 0; i < 100; i++)
+    if (this != &b)
     {
-        if (b.ideas[i].empty())
-            break;
-        ideas[i] = b.ideas[i] + " has been copied";
+        delete[] ideas;
+        this->ideas = new std::string[100];
+        for (int i = 0; i < 100; i++)
+        {
+            ideas[i] = b.ideas[i];
+        }
     }
     return *this;
 }

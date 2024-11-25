@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zouddach <zouddach@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: zouddach         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:14:39 by zouddach          #+#    #+#             */
 /*   Updated: 2024/11/23 23:28:05 by zouddach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Character.hpp"
+#include "Character.hpp"
 #include <iostream>
 
 Character::Character() : _name("Default") {
@@ -27,13 +27,15 @@ Character::Character(std::string name) : _name(name) {
     std::cout << "Character Parametric constructor called" << std::endl;
 }
 
-Character::Character(const Character &a) {
-    if (this == &a)
-        return ;
-    static_cast<const std::string>(_name) + a._name + " but copy Constructed";
+Character::Character(const Character &a) : _name(a._name + " but copy Constructed") {
+    // for (int i = 0; i < 4; i++) {
+    //     if (_materias[i] != NULL)
+    //         delete _materias[i];
+    //     _materias[i] = NULL;
+    // }
+        std::cout << "deep copy here\n" << std::endl;
     for (int i = 0; i < 4; i++) {
-        if (a._materias[i] != NULL)
-            _materias[i] = a._materias[i]->clone();
+        _materias[i] = a._materias[i]->clone();
     }
     std::cout << "Character Copy constructor called" << std::endl;
 }
@@ -52,8 +54,9 @@ Character &Character::operator=(const Character &a) {
         return *this;
     static_cast<const std::string>(_name) + a._name + " but copy Assigned";
     for (int i = 0; i < 4; i++) {
-        if (a._materias[i] != NULL)
-            _materias[i] = a._materias[i]->clone();
+        if (_materias[i] != NULL)
+            delete _materias[i];
+        _materias[i] = a._materias[i]->clone();
     }
     std::cout << "Character Assignation operator called" << std::endl;
     return *this;
@@ -65,26 +68,23 @@ std::string const &Character::getName() const {
 
 void Character::equip(AMateria *m) {
     if (m == NULL)
-        return ;
+        return;
     int i = 0;
-    while ((this->_materias[i] != NULL) && i < 4)
+    while (i < 4 && _materias[i] != NULL)
         i++;
-    if (i == 4)
-    {
+    if (i == 4) {
         std::cout << "This character is full" << std::endl;
-        return ;
+        return;
     }
     _materias[i] = m;
     std::cout << "Equipping " << m->getType() << " to " << _name << std::endl;
-    
 }
 
 void Character::unequip(int idx) {
-    if (idx < 0 || idx > 3)
-        return ;
+    if (idx < 0 || idx > 3 || _materias[idx] == NULL)
+        return;
     std::cout << "Unequipping " << _materias[idx]->getType() << " from " << _name << std::endl;
     _materias[idx] = NULL;
-    return;
 }
 
 void Character::use(int idx, ICharacter &target) {
@@ -92,7 +92,7 @@ void Character::use(int idx, ICharacter &target) {
         _materias[idx]->use(target);
         std::cout << "Using " << _materias[idx]->getType() << " on " << target.getName() << std::endl;
     } else {
-        std::cerr << "Invalid index" << std::endl;
+        std::cerr << "Invalid index or no Materia equipped" << std::endl;
     }
 }
 

@@ -5,7 +5,7 @@ OBJ=$(SRC:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	c++ -Wall -Wextra -Werror  -std=c++98 $(OBJ) -o $(NAME)
+	c++ -Wall -Wextra -Werror -std=c++98 $(OBJ) -o $(NAME)
 
 %.o: %.cpp Animal.hpp Cat.hpp Dog.hpp Brain.hpp
 	c++ -Wall -Wextra -Werror -std=c++98 -c $< -o $@

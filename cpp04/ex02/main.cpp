@@ -21,16 +21,9 @@
 
 int main()
 {
-    //  Intra Tests....
     // atexit(leaks_check);
-    //  const Animal* j = new Dog();
-    //  const Animal* i = new Cat();
-    //  delete j;//should not create a leak
-    //  delete i;
-
-    //  My Tests....
     std::cout << "\nAllocating Animals...\n" << std::endl;
-    Animal *(animals[10]);
+    Animal *animals[10];
     for (int i = 0; i < 10; i++)
     {
         if (i < 5)

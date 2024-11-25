@@ -48,14 +48,11 @@ MateriaSource::~MateriaSource() {
 MateriaSource &MateriaSource::operator=(const MateriaSource &a) {
     if (this == &a)
         return *this;
-    for (int i = 0; i < 4; i++) {
-        if (_materias[i] != NULL)
-            delete _materias[i];
-    }
-    
+
     for (int i = 0; i < 4; i++) {
         if (a._materias[i] != NULL)
-            _materias[i] = a._materias[i]->clone();
+            delete _materias[i];
+        _materias[i] = a._materias[i]->clone();
     }
     std::cout << "MateriaSource Assignation operator called" << std::endl;
     return *this;

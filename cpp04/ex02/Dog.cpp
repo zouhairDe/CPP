@@ -13,13 +13,11 @@
 #include "Dog.hpp"
 
 Dog::Dog() {
-    _type = "Dog";
     this->brain = new Brain();
     std::cout << "Dog constructor called" << std::endl;
 }
 
-Dog::Dog(const Dog &d) {
-    _type = d._type;
+Dog::Dog(const Dog &d) : Animal(d) {
     this->brain = new Brain(*d.brain);
     std::cout << "Dog copy constructor called" << std::endl;
 }
@@ -32,25 +30,25 @@ Dog::~Dog() {
 Dog &Dog::operator=(const Dog &d) {
     if (this == &d)
         return *this;
+    Animal::operator=(d);
     delete this->brain;
     this->brain = new Brain(*d.brain);
-    _type = d._type;
     std::cout << "Dog assignation operator called" << std::endl;
     return *this;
 }
 
 void Dog::makeSound() const {
-    std::cout << "Woof!" << std::endl;
+    std::cout << "Woof Woof" << std::endl;
 }
 
 void Dog::getBrainAdrr() const {
-    std::cout << this->brain << std::endl;
+    std::cout << "Brain address: " << this->brain << std::endl;
 }
 
-std::string    *Dog::printIdeaAdressOf(int i) const {
+std::string *Dog::printIdeaAdressOf(int i) const {
     return &this->brain->ideas[i];
 }
 
-std::string    Dog::printIdeaNumber(int i) const {
-    return  this->brain->ideas[i];
+std::string Dog::printIdeaNumber(int i) const {
+    return this->brain->ideas[i];
 }

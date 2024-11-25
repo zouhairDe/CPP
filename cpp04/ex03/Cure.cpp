@@ -18,7 +18,7 @@ Cure::Cure() {
     std::cout << "Cure Default constructor called" << std::endl;
 }
 
-Cure::Cure(const Cure &a) {
+Cure::Cure(const Cure &a) : AMateria(a) {
     _type = a.getType();
     std::cout << "Cure Copy constructor called" << std::endl;
 }
