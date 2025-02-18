@@ -64,6 +64,16 @@
 		"typeinfo": "cpp",
 		"unordered_map": "cpp",
 		"utility": "cpp",
-		"vector": "cpp"
-	}
+		"vector": "cpp",
+		"clocale": "cpp",
+		"*.tcc": "cpp",
+		"compare": "cpp",
+		"concepts": "cpp",
+		"memory_resource": "cpp",
+		"numeric": "cpp",
+		"random": "cpp",
+		"numbers": "cpp",
+		"ranges": "cpp"
+	},
+	"C_Cpp.default.compilerPath": "/usr/bin/g++-11"
 }

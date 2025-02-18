@@ -5,29 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: zouddach <zouddach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/11 14:32:20 by zouddach          #+#    #+#             */
-/*   Updated: 2025/02/12 19:38:49 by zouddach         ###   ########.fr       */
+/*   Created: 2025/02/12 21:07:43 by zouddach          #+#    #+#             */
+/*   Updated: 2025/02/12 21:14:47 by zouddach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "AForm.hpp"
-# include "Bureaucrat.hpp"
-# include "ShrubberyCreationForm.hpp"
-# include "RobotomyRequestForm.hpp"
-# include "PresidentialPardonForm.hpp"
-# include "Intern.hpp"
+# include "ScalarConverter.hpp"
 
-int main()
+int main(int ac, char **av)
 {
-	try
-	{
-		Intern someRandomIntern;
-		AForm* rrf;
-		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-		delete rrf;
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+    if (ac != 2)
+    {
+        std::cerr << "Error: Invalid number of arguments" << std::endl;
+        return 1;
+    }
+    ScalarConverter::convert(av[1]);
+    return 0;
 }
