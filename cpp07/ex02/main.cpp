@@ -6,7 +6,7 @@
 /*   By: zouddach <zouddach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 22:53:28 by zouddach          #+#    #+#             */
-/*   Updated: 2025/03/01 22:53:28 by zouddach         ###   ########.fr       */
+/*   Updated: 2025/03/13 22:40:57 by zouddach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,13 @@ int main()
     catch (std::exception &e)
     {
         std::cerr << e.what() << std::endl;
+    }
+
+    std::cout << "Reading from a const Array:" << std::endl;
+    const Array<int> arr4(5);
+    for (unsigned int i = 0; i < arr4.size(); i++)
+    {
+        std::cout << arr4[i] << " ";
     }
 
     return 0;

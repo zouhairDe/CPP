@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Array.hpp                                          :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zouddach <zouddach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/01 22:38:55 by zouddach          #+#    #+#             */
-/*   Updated: 2025/03/13 22:23:44 by zouddach         ###   ########.fr       */
+/*   Created: 2025/03/13 22:18:48 by zouddach          #+#    #+#             */
+/*   Updated: 2025/03/13 22:19:08 by zouddach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ARRAY_HPP
-#define ARRAY_HPP
+#ifndef WHATEVER_HPP
+# define WHATEVER_HPP
 
 # include <iostream>
 
 template <typename T>
-class Array
+void swap(T &a, T &b)
 {
-    private:
-        T *array;
-        unsigned int Rsize;
-    public:
-        Array();
-        Array(unsigned int n);
-        Array(const Array &src);
-        ~Array();
-        Array &operator=(const Array &src);
-        T &operator[](unsigned int index);
-        const T &operator[](unsigned int index) const;
-        unsigned int size() const;
-};
+    T temp = a;
+    a = b;
+    b = temp;
+}
+
+template <typename T>
+T min(T a, T b)
+{
+    return (a < b ? a : b);
+}
+
+template <typename T>
+T max(T a, T b)
+{
+    return (a > b ? a : b);
+}
 
 #endif
