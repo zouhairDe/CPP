@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zouddach <zouddach@1337.student.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/11 08:51:51 by zouddach          #+#    #+#             */
-/*   Updated: 2025/02/27 02:00:53 by zouddach         ###   ########.fr       */
+/*   Created: 2025/02/24 14:06:06 by zouddach          #+#    #+#             */
+/*   Updated: 2025/02/25 16:07:11 by zouddach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef SERIALIZER_HPP
+# define SERIALIZER_HPP
 
 # include <iostream>
 
-class Fixed
+typedef struct s_data
+{
+	std::string name;
+	int			age;
+}	Data;
+
+class Serializer
 {
 	private:
-		int _value;
-		static const int _fraction = 8;
+		Serializer();
 	public:
-		Fixed();
-		Fixed(const Fixed &copy);
-		Fixed(const int num);
-		Fixed(const float num);
-		~Fixed();
-		Fixed &operator=(const Fixed &copy);
-		int getRawBits(void) const;
-		float toFloat(void) const;
-		int toInt(void) const;
-		void setRawBits(int const raw);
+		static uintptr_t	*serialize(Data *data);
+		static Data			*deserialize(uintptr_t *raw);
 };
-
-std::ostream &operator<<(std::ostream &out, const Fixed &fixed);
 
 #endif

@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   A.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zouddach <zouddach@1337.student.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/01 21:54:13 by zouddach          #+#    #+#             */
-/*   Updated: 2025/03/14 06:40:55 by zouddach         ###   ########.fr       */
+/*   Created: 2025/02/25 17:20:32 by zouddach          #+#    #+#             */
+/*   Updated: 2025/02/25 17:20:41 by zouddach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ITER_HPP
-# define ITER_HPP
+#ifndef A_HPP
+# define A_HPP
 
-# include <iostream>
+# include "Base.hpp"
 
-template <typename T, typename G>
-void iter(T *array, int length, G f)
+class A : public Base
 {
-    for (int i = 0; i < length; i++)
-        f(array[i]);
-}
+	public:
+		A();
+};
 
 #endif

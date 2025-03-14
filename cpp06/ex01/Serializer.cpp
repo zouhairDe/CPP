@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   Serializer.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zouddach <zouddach@1337.student.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/01 21:54:13 by zouddach          #+#    #+#             */
-/*   Updated: 2025/03/14 06:40:55 by zouddach         ###   ########.fr       */
+/*   Created: 2025/02/24 14:08:26 by zouddach          #+#    #+#             */
+/*   Updated: 2025/02/25 16:07:29 by zouddach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ITER_HPP
-# define ITER_HPP
+# include "Serializer.hpp"
 
-# include <iostream>
-
-template <typename T, typename G>
-void iter(T *array, int length, G f)
+Serializer::Serializer()
 {
-    for (int i = 0; i < length; i++)
-        f(array[i]);
 }
 
-#endif
+uintptr_t *Serializer::serialize(Data *data)
+{
+	uintptr_t *dataptr = reinterpret_cast<uintptr_t *>(data);
+	return dataptr;
+}
+
+Data *Serializer::deserialize(uintptr_t *raw)
+{
+	Data *data = reinterpret_cast<Data *>(raw);
+	return data;
+}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zouddach <zouddach@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zouddach <zouddach@1337.student.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 20:56:22 by zouddach          #+#    #+#             */
-/*   Updated: 2025/02/12 21:16:54 by zouddach         ###   ########.fr       */
+/*   Updated: 2025/02/24 10:10:39 by zouddach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,29 @@
 # define SCALARCONVERTER_HPP
 
 # include <iostream>
-# include <string>
+# include <iomanip>
 
 
 class ScalarConverter
 {
     private:
-        std::string _input;
+        std::string	_input;
         ScalarConverter();
     public:
         ScalarConverter(std::string input);
         ScalarConverter(ScalarConverter const & src);
         ~ScalarConverter();
         ScalarConverter & operator=(ScalarConverter const & src);
-        static void convert(std::string input);
-        static int toInt(std::string input);
-        static float toFloat(std::string input);
-        static double toDouble(std::string input);
-        static char toChar(std::string input);
+        void	convert();
+        void	intConverter() const;
+		void	floatConverter() const;
+		void	doubleConverter() const;
+		void	charConverter() const;
+		
+		bool	isChar() const;
+		bool	isInt() const;
+		bool	isFloat() const;
+		bool	isDouble() const;
 };
 
 #endif

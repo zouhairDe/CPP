@@ -1,38 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zouddach <zouddach@1337.student.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/11 08:51:51 by zouddach          #+#    #+#             */
-/*   Updated: 2025/02/27 02:00:53 by zouddach         ###   ########.fr       */
+/*   Created: 2025/02/25 17:18:45 by zouddach          #+#    #+#             */
+/*   Updated: 2025/02/25 17:19:28 by zouddach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef BASE_HPP
+#define BASE_HPP
 
 # include <iostream>
 
-class Fixed
+class Base
 {
-	private:
-		int _value;
-		static const int _fraction = 8;
 	public:
-		Fixed();
-		Fixed(const Fixed &copy);
-		Fixed(const int num);
-		Fixed(const float num);
-		~Fixed();
-		Fixed &operator=(const Fixed &copy);
-		int getRawBits(void) const;
-		float toFloat(void) const;
-		int toInt(void) const;
-		void setRawBits(int const raw);
+		virtual ~Base() {};
 };
-
-std::ostream &operator<<(std::ostream &out, const Fixed &fixed);
 
 #endif
