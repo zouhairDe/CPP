@@ -6,7 +6,7 @@
 /*   By: zouddach <zouddach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 08:23:53 by zouddach          #+#    #+#             */
-/*   Updated: 2025/03/14 08:23:53 by zouddach         ###   ########.fr       */
+/*   Updated: 2025/03/16 09:01:29 by zouddach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ int main()
     std::cout << bold << "Shortest span: " << mySpan.shortestSpan() << std::endl;
     std::cout << bold << "Longest span: " << mySpan.longestSpan() << std::endl;
     std::cout << bold << blue << "Prove that the span calculation is correct" << reset << std::endl;
-    // std::cout << "Shortest span: " << *std::min_element(randomNumbers.begin(), randomNumbers.end()) << std::endl;
     std::cout << bold << red << "For the longest span, we will use the first and last element of the vector [sorted]" << reset << std::endl;
     std::sort(randomNumbers.begin(), randomNumbers.end());
     std::cout << bold << "First element: " << randomNumbers[0] <<  " Last element: " << randomNumbers[size - 1] << std::endl;

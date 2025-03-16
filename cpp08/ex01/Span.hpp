@@ -6,7 +6,7 @@
 /*   By: zouddach <zouddach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 08:16:00 by zouddach          #+#    #+#             */
-/*   Updated: 2025/03/14 08:16:00 by zouddach         ###   ########.fr       */
+/*   Updated: 2025/03/16 08:57:02 by zouddach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,6 @@ class Span
         {
             virtual const char *what() const throw();
         };
-
-        // class NotEnoughNumbersException : public std::exception
-        // {
-        //     virtual const char *what() const throw();
-        // };
 
         class OutOfSizeException : public std::exception
         {
