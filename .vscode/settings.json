@@ -73,7 +73,8 @@
 		"numeric": "cpp",
 		"random": "cpp",
 		"numbers": "cpp",
-		"ranges": "cpp"
+		"ranges": "cpp",
+		"map": "cpp"
 	},
 	"C_Cpp.default.compilerPath": "/usr/bin/g++-11"
 }
