@@ -84,3 +84,7 @@ cd cppXX/
 cd exXX/
   make
     ./binary #can be found on the Makefile [NAME variable]
+```
+
+This repository is intended for educational purposes only.
+Please comply with 42’s academic integrity guidelines.
