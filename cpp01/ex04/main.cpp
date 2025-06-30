@@ -54,7 +54,7 @@ int main(int ac, char **av)
 	std::string toBeReplaced = av[2];
 	std::string toReplaceWith = av[3];
 	std::string content = readFileContents(filename);
-	if (toBeReplaced == toReplaceWith)
+	if (toBeReplaced == toReplaceWith || toBeReplaced.empty() || toReplaceWith.empty())
 	{
 		std::cout << "Please provide a valid string to replace and a valid string to replace with" << std::endl;
 		return 1;
